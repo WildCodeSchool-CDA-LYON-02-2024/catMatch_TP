@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import './Cat.css';
 
-const Cat = ({ data, score, setScore }) => {
-  console.log(score);
+const Cat = ({ data, score, setScore, setIndex }) => {
   const addScore = () => {
-    setScore((prevState) => prevState + 1);
+    // setScore((prevState) => prevState + 1);
+    setIndex(data.index);
   };
 
   return (
     <div className='img-container'>
       <img src={data.link} alt='' className='img' onClick={() => addScore()} />
 
-      <span>Score : {data.score} </span>
+      <span>Score : {data.scoreT} </span>
     </div>
   );
 };
