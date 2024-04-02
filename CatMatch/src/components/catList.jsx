@@ -4,7 +4,7 @@ export default function CatList() {
   const cat = [
     {
       name: "Chaton allongé",
-      link: "images/allongé.jpg",
+      link: "imag/cat-551554_1280.jpg",
     },
     {
       name: "Chat regarde haut",
@@ -21,17 +21,17 @@ export default function CatList() {
 
     {
       name: "Chat grimpe",
-      link: "images/grimpe.jpg",
+      link: "imag/ff.jpg",
     },
 
     {
       name: "Chat baille",
-      link: "images/baille.jpg",
+      link: "imag/cat-png-17.jpg",
     },
 
     {
       name: "Trois Châtons",
-      link: "images/trois.jpg",
+      link: "imag/h.jpg",
     },
   ];
 
