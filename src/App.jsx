@@ -1,9 +1,6 @@
-
-import { useState,useEffect } from 'react';
-import CatCard from './components/CatCard.jsx'
-import './App.css'
-
-
+import { useState, useEffect } from 'react';
+import CatCard from './components/CatCard.jsx';
+import './App.css';
 
 const cats = [
   {
@@ -47,13 +44,9 @@ const cats = [
 ];
 
 function App() {
-
   const [catList, setCatList] = useState(cats);
-  const [display2Cats,setDisplay2Cats] = useState([])
+  const [display2Cats, setDisplay2Cats] = useState([]);
 
-
-
-useEffect(() => {
   function selectRandomCats() {
     const randomIndex1 = Math.floor(Math.random() * catList.length);
     let randomIndex2 = Math.floor(Math.random() * catList.length);
@@ -65,32 +58,32 @@ useEffect(() => {
     const firstRandomCat = catList[randomIndex1];
     const secondRandomCat = catList[randomIndex2];
 
-    console.log(firstRandomCat,"1");
-    console.log(secondRandomCat,"2");
+    console.log(firstRandomCat, '1');
+    console.log(secondRandomCat, '2');
 
     setDisplay2Cats([firstRandomCat, secondRandomCat]);
   }
 
-  selectRandomCats();
-}, [catList]);
-  
-
-function handleClick(index) {
-  console.log(display2Cats[index]);
- 
-
-}
+  useEffect(() => {
+    selectRandomCats();
+  }, [catList]);
 
   
 
+  function handleClick(index) {
+    // console.log(display2Cats[index]);
+    const selectedCat = display2Cats[index];
+    selectedCat.count += 1;
+    selectRandomCats();
+  }
 
   return (
     <div className='container'>
       {display2Cats.map((cat, i) => (
-        <CatCard key={i} cat={cat} handleClick={()=>handleClick(i)} />
+        <CatCard key={i} cat={cat} handleClick={() => handleClick(i)} />
       ))}
     </div>
   );
 }
 
-export default App
+export default App;
