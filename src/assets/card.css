@@ -1,0 +1,42 @@
+img {
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+}
+
+.card {
+	border-radius: 10px;
+	width: 40vw;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	background-color: #c9c9c9;
+	color: #000000;
+	.card-body {
+		div {
+			border-radius: inherit;
+		}
+		height: 90%;
+		border-radius: inherit;
+		div:last-child {
+			display: flex;
+			height: 15%;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			p {
+				font-weight: bolder;
+			}
+		}
+	}
+	.card-footer {
+		border-radius: inherit;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 15%;
+		span {
+			font-weight: bolder;
+		}
+	}
+}
