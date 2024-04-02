@@ -7,10 +7,10 @@ function CatMatch() {
 
   const getRandomCats = () => {
     let catsCopy = [...catData];
-    catsCopy.sort(() => 0.5 - Math.random()); // Mélanger l'ensemble des chats
+    catsCopy.sort(() => 0.5 - Math.random());
     let selectedCats = catsCopy.slice(0, 2);
     if (Math.random() > 0.5) {
-      selectedCats.reverse(); // Inverser les chats aléatoirement pour changer leur position
+      selectedCats.reverse();
     }
     setCats(selectedCats);
   };
@@ -20,7 +20,6 @@ function CatMatch() {
     getRandomCats();
   };
 
-  // Utiliser useEffect pour s'assurer que les chats sont mélangés au chargement initial
   useEffect(() => {
     getRandomCats();
   }, []);
