@@ -84,8 +84,22 @@ function App() {
       name: selectedCat.name,
       score: selectedCat.count,
     };
-    setScore([...score, newScore]);
+
   
+   
+
+     if (score.find((item) => item.name === selectedCat.name)) {
+       const updatedScore = score.map((item) => {
+         if (item.name === selectedCat.name) {
+           return newScore; 
+         }
+         return item;
+       });
+       setScore(updatedScore);
+     } else {
+       setScore([...score, newScore]); 
+     }
+
 
     selectRandomCats();
   }
