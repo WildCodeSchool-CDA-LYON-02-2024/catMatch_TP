@@ -68,12 +68,12 @@ function App() {
     selectRandomCats();
   }, [catList]);
 
-  
-
   function handleClick(index) {
     // console.log(display2Cats[index]);
     const selectedCat = display2Cats[index];
+    console.log(selectedCat, 'chat choisi');
     selectedCat.count += 1;
+
     selectRandomCats();
   }
 

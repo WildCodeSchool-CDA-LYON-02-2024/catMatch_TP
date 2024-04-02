@@ -7,7 +7,9 @@ function catCard({cat,handleClick}) {
         src={cat.link}
         alt={`le ${cat.name}`}
         onClick={handleClick}
+       
       />
+      <figcaption>{cat.count}</figcaption>
     </figure>
   );
 }
