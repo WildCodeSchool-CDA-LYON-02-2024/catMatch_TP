@@ -2,7 +2,12 @@
   margin: 0;
   padding: 0;
 }
-
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: x-large;
+  color: blueviolet;
+}
 .leaderboard-container {
   display: flex;
   flex-direction: column;
