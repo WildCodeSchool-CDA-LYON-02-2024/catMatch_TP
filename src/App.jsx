@@ -45,10 +45,10 @@ function App() {
       <section>
       <h2>Score</h2>
       <div className="score">
-        {Object.keys(score).map((catName, index) => (
+      {cats.map((cat, index) => (
           <div key={index} className="score-item">
             <p>
-              {catName}: {score[catName]}
+              {cat.name}: {score[cat.name] || 0}
             </p>
           </div>
         ))}
