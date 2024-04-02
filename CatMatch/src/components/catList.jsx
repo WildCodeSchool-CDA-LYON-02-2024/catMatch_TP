@@ -21,17 +21,17 @@ export default function CatList() {
 
     {
       name: "Chat grimpe",
-      link: "imag/ff.jpg",
+      link: "imag/cat-5098930_1280.jpg",
     },
 
     {
       name: "Chat baille",
-      link: "imag/cat-png-17.jpg",
+      link: "imag/cat-5098932_640.jpg",
     },
 
     {
       name: "Trois Châtons",
-      link: "imag/h.jpg",
+      link: "imag/alley-cat-7367554_640.jpg",
     },
   ];
 
