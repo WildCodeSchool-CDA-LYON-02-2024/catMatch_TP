@@ -1,6 +1,6 @@
 
 import './App.css';
-import CatList from './components/CatList';
+import CatList from './components/catList';
 
 function App() {
   return (
