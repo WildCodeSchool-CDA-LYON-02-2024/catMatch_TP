@@ -1,30 +1,33 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
-function Leaderboard({ catsData }) {
-  const [cats, setCats] = useState([]);
+function Leaderboard() {
+  const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    const sortedCats = [...catsData].sort((a, b) => b.points - a.points);
-    setCats(sortedCats);
-  }, [catsData]);
+    const fetchData = async () => {
+      const response = await fetch("/src/assets/json/cat.json");
+      const jsonData = await response.json();
+      const sortedLeaderboard = jsonData.sort((a, b) => b.points - a.points);
+      setLeaderboard(sortedLeaderboard);
+    };
+
+    fetchData();
+  }, []);
 
   return (
-    <div className="leaderboard">
-      <h2>Classement des Chats</h2>
-      <ul>
-        {cats.map((cat, index) => (
+    <div className="leaderboard-container">
+      <h1>Classement</h1>
+      <ol>
+        {leaderboard.map((cat) => (
           <li key={cat.id}>
-            {index + 1}. {cat.name} - {cat.points} points
+            <img src={cat.link} alt={cat.name} className="CatImgLeaderBoard" />
+            <h2>{cat.name}</h2>
+            <h3>{cat.points} points</h3>
           </li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 }
-
-Leaderboard.propTypes = {
-  catsData: PropTypes.array.isRequired,
-};
 
 export default Leaderboard;
