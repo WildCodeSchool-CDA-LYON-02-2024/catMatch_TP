@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import CatCard from './components/CatCard.jsx';
+import ScoreCard from './components/ScoreCard.jsx';
 import './App.css';
 
 const cats = [
@@ -46,6 +47,12 @@ const cats = [
 function App() {
   const [catList, setCatList] = useState(cats);
   const [display2Cats, setDisplay2Cats] = useState([]);
+  const [score, setScore] = useState([
+    {
+      name: '',
+      score: 0,
+    },
+  ]);
 
   function selectRandomCats() {
     const randomIndex1 = Math.floor(Math.random() * catList.length);
@@ -71,18 +78,35 @@ function App() {
   function handleClick(index) {
     // console.log(display2Cats[index]);
     const selectedCat = display2Cats[index];
-    console.log(selectedCat, 'chat choisi');
+
     selectedCat.count += 1;
+    const newScore = {
+      name: selectedCat.name,
+      score: selectedCat.count,
+    };
+    setScore([...score, newScore]);
+  
 
     selectRandomCats();
   }
 
   return (
-    <div className='container'>
-      {display2Cats.map((cat, i) => (
-        <CatCard key={i} cat={cat} handleClick={() => handleClick(i)} />
-      ))}
-    </div>
+    <main>
+      <div className='container-scorelist'>
+        <h1>Les chats les plus populaires</h1>
+        {score
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 3)
+          .map((score, i) => (
+            <ScoreCard key={i} score={score} />
+          ))}
+      </div>
+      <div className='container'>
+        {display2Cats.map((cat, i) => (
+          <CatCard key={i} cat={cat} handleClick={() => handleClick(i)} />
+        ))}
+      </div>
+    </main>
   );
 }
 
