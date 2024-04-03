@@ -26,9 +26,7 @@ class Cat {
 
   addScore(id) {
     this.data.map((cat) =>
-      cat.id === id
-        ? { ...cat, score: cat.score++ + console.log('catScore', cat.score) }
-        : cat
+      cat.id === id ? { ...cat, score: cat.score++ } : cat
     );
   }
 

@@ -1,4 +1,5 @@
 import './CatResult.css';
+import PropTypes from 'prop-types';
 
 const CatResult = ({ name, score }) => {
   return (
@@ -13,4 +14,8 @@ const CatResult = ({ name, score }) => {
   );
 };
 
+CatResult.propTypes = {
+  name: PropTypes.string,
+  score: PropTypes.number,
+};
 export default CatResult;

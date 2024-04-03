@@ -13,7 +13,6 @@ const App = () => {
     catArray.addScore(id);
     setCats(catArray.getRandomCats());
     setCatResult(catArray.topResult());
-    console.log('catresult', catResult);
   };
 
   return (
@@ -24,7 +23,7 @@ const App = () => {
             <Cat
               data={el}
               link={el.link}
-              scoreT={el.score}
+              score={el.score}
               name={el.name}
               id={el.id}
               onClick={onClick}
@@ -35,14 +34,7 @@ const App = () => {
       <div className='result-container'>
         {catResult.map((el, index) => (
           <div key={index}>
-            <CatResult
-              data={el}
-              link={el.link}
-              score={el.score}
-              name={el.name}
-              id={el.id}
-              onClick={onClick}
-            />
+            <CatResult score={el.score} name={el.name} onClick={onClick} />
           </div>
         ))}
       </div>

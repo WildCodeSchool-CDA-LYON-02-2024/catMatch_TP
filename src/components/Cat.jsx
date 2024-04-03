@@ -1,6 +1,7 @@
 import './Cat.css';
+import PropTypes from 'prop-types';
 
-const Cat = ({ link, scoreT, name, onClick, id }) => {
+const Cat = ({ link, score, name, onClick, id }) => {
   const handleClick = () => {
     onClick(id);
   };
@@ -13,10 +14,18 @@ const Cat = ({ link, scoreT, name, onClick, id }) => {
       </div>
 
       <div>
-        <span>Score : {scoreT} </span>
+        <span>Score : {score} </span>
       </div>
     </div>
   );
+};
+
+Cat.propTypes = {
+  link: PropTypes.string,
+  score: PropTypes.number,
+  name: PropTypes.string,
+  onClick: PropTypes.func,
+  id: PropTypes.number,
 };
 
 export default Cat;
