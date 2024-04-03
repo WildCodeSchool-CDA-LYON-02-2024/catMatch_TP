@@ -3,7 +3,6 @@ import './Cat.css';
 
 const Cat = ({ data, score, setScore, setIndex }) => {
   const addScore = () => {
-    // setScore((prevState) => prevState + 1);
     setIndex(data.index);
   };
 

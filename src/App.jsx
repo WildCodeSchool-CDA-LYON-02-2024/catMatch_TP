@@ -10,47 +10,39 @@ function App() {
   const [cat1, setCat1] = useState(null);
   const [cat2, setCat2] = useState(null);
   const [index, setIndex] = useState(null);
-  const [scoreArray, setScoreArray] = useState(
-    data.map((el, index) => ({
-      ...el,
-      index,
-      scoreT: 0,
-    }))
-  );
+
+  let dataCat = data.map((el, index) => ({
+    ...el,
+    index,
+    scoreT: 0,
+  }));
+  const [scoreArray, setScoreArray] = useState(dataCat);
 
   useEffect(() => {
-    const tab = scoreArray.map((el, i) => {
-      if (i === index) {
-        console.log('el', el);
-        return {
-          ...el,
-          scoreT: el.scoreT++,
-        };
-      }
-      return el;
-    });
-    console.log('index', scoreArray[index]);
-    console.log('tab', tab);
-    setScoreArray(tab);
-    console.log('SCOREARRAY', scoreArray);
-  }, [index]);
-
-  // let ScoreArray = data.map((el, index) => ({
-  //   ...el,
-  //   index,
-  //   scoreT: 0,
-  // }));
-
-  useEffect(() => {
-    // let updateValues = ScoreArray.map((el) => el);
-
-    // for (let i = 0; i < updateValues.length; i++) {
+    // const tab = scoreArray.map((el, i) => {
     //   if (i === index) {
-    //     updateValues[i].scoreT += 1;
-    //     console.log(updateValues);
+    //     console.log('el', el);
+    //     return {
+    //       ...el,
+    //       scoreT: el.scoreT++,
+    //     };
     //   }
-    // }
+    //   return el;
+    // });
 
+    for (let i = 0; i < scoreArray.length; i++) {
+      if (i === index) {
+        setScore(scoreArray[i].scoreT);
+        console.log('true');
+        console.log('scoreArray[i]', scoreArray[i]);
+        setScore(scoreArray[i].scoreT++);
+      }
+    }
+
+    console.log('index', scoreArray[index]);
+    // console.log('tab', tab);
+    // setScoreArray(tab);
+    console.log('SCOREARRAY', scoreArray);
     setRandomNumber1(Math.floor(Math.random() * scoreArray.length));
     setRandomNumber2(Math.floor(Math.random() * scoreArray.length));
     setCat1(scoreArray[randomNumber1]);
