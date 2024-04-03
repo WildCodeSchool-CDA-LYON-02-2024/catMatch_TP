@@ -1,16 +1,20 @@
-import { useState } from 'react';
 import './Cat.css';
 
-const Cat = ({ data, score, setScore, setIndex }) => {
-  const addScore = () => {
-    setIndex(data.index);
+const Cat = ({ link, scoreT, name, onClick, id }) => {
+  const handleClick = () => {
+    onClick(id);
   };
 
   return (
-    <div className='img-container'>
-      <img src={data.link} alt='' className='img' onClick={() => addScore()} />
+    <div>
+      <div className='img-container'>
+        <img src={link} alt='' className='img' onClick={handleClick} />
+        <span id='span-name'> {name} </span>
+      </div>
 
-      <span>Score : {data.scoreT} </span>
+      <div>
+        <span>Score : {scoreT} </span>
+      </div>
     </div>
   );
 };

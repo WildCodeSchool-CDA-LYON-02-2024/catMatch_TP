@@ -1,4 +1,16 @@
 .cat-container {
   display: flex;
   justify-content: space-around;
+  margin: 30px;
+}
+
+.result-container {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  .cat-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
