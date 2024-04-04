@@ -1,7 +1,19 @@
+// react
 import { useState } from "react";
-import "./App.css";
+
+// datas
 import dataJson from "./assets/data.json";
+
+// components
 import Cats from "./components/Cats";
+import Score from "./components/Score";
+import Navbar from "./components/NavBar";
+
+// css
+import "./App.css";
+
+// rrd
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [scores, setScores] = useState({});
@@ -15,9 +27,28 @@ function App() {
   };
 
   return (
-    <div className="main-page">
-      <Cats cats={dataJson} scores={scores} updateScores={updateScores} />
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Cats
+                cats={dataJson}
+                scores={scores}
+                updateScores={updateScores}
+              />
+            }
+          />
+          <Route
+            path="/score"
+            element={<Score scores={scores} cats={dataJson} />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

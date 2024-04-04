@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 // CSS
 import "./Cats.css";
 
-function Cats({ cats, scores, updateScores }) {
+function Cats({ cats, updateScores }) {
   const [selectedCats, setSelectedCats] = useState([]);
 
   const selectRandomCats = () => {
@@ -33,7 +33,6 @@ function Cats({ cats, scores, updateScores }) {
         <div key={index} onClick={() => handleCatClick(cat)}>
           <img src={cat.link} alt={cat.name} />
           <p>{cat.name}</p>
-          <p>Score: {scores[cat.name] || 0}</p>
         </div>
       ))}
     </>
