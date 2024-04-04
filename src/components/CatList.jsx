@@ -12,7 +12,7 @@ const HandleCat = ()=>{
     <div>
       <div onClick={HandleCat}>
         <img src={img}/>
-        <span>{name}</span>
+        <p>{name}</p>
       </div>
 
       <div>

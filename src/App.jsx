@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import CatList from "./components/CatList";
 import CatService from "./services/CatService";
+import Navbar from "./components/Navbar";
 
 
 const service = new CatService();
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <>
+    <Navbar/>
       {cats.map((cat, index) => (
         <div key={index}>
           <CatList

@@ -1,9 +1,11 @@
 img{
-    width: 80%;
+    width: 60%;
 }
 
 .container{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .scoreContainer{
