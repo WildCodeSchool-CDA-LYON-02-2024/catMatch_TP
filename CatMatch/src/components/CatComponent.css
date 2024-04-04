@@ -1,0 +1,7 @@
+.Cat {
+    width: 350px;
+}
+
+.Cat > img {
+    width: 100%;
+}
