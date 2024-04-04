@@ -25,6 +25,11 @@ class CatService {
     }
     return cats;
   }
+
+  addScore(id){
+    this.data = this.data.map(cat =>
+      cat.id === id ? { ...cat, score: cat.score + 1 } : cat)
+  }
 }
 
 export default CatService;
