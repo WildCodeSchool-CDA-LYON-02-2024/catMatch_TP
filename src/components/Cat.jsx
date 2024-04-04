@@ -11,10 +11,7 @@ const Cat = ({ link, score, name, onClick, id }) => {
       <div className='img-container'>
         <img src={link} alt='' className='img' onClick={handleClick} />
         <span id='span-name'> {name} </span>
-      </div>
-
-      <div>
-        <span>Score : {score} </span>
+        <span id='span-score'>Score : {score} </span>
       </div>
     </div>
   );

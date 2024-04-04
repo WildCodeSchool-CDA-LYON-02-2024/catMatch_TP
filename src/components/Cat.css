@@ -2,6 +2,8 @@
   width: 300px;
   height: 300px;
   position: relative;
+  margin: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.589);
 
   .img {
     width: 100%;
@@ -13,6 +15,22 @@
     position: absolute;
     width: 100%;
     top: 100%;
-    left: 30%;
+    padding: 5px;
+    right: -10%;
+
+    border-radius: 3px;
+    border-top: 1px solid white;
+    text-transform: uppercase;
+  }
+
+  #span-score {
+    background-color: rgba(0, 0, 0, 0.418);
+    padding: 10px;
+    width: 100px;
+    position: absolute;
+    bottom: 80%;
+    right: 60%;
+    z-index: 1;
+    border-radius: 3px;
   }
 }

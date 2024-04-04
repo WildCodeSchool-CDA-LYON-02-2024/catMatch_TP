@@ -32,7 +32,7 @@ class Cat {
 
   topResult() {
     let tab = this.data.map((el) => {
-      return { name: el.name, score: el.score };
+      return { name: el.name, score: el.score, picture: el.link };
     });
     return tab.sort((a, b) => b.score - a.score);
   }
