@@ -29,6 +29,7 @@ class CatService {
   addScore(id){
     this.data = this.data.map(cat =>
       cat.id === id ? { ...cat, score: cat.score + 1 } : cat)
+      localStorage.setItem('cat',JSON.stringify(this.data));
   }
 }
 

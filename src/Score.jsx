@@ -1,11 +1,10 @@
 import Navbar from "./components/Navbar";
 import CatList from "./components/CatList";
-import CatService from "./services/CatService";
 import "./App.css";
-const service = new CatService();
 
 export default function Score(){
-    const cat = service.data;
+    
+    const cat = JSON.parse(localStorage.getItem('cat'));
 
     return (
         <section className="pageContainer">

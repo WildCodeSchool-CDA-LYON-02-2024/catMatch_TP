@@ -7,11 +7,10 @@ import Navbar from "./components/Navbar";
 const service = new CatService();
 
 function App() {
-  console.log(service.data);
+ 
 
   const [cats, setCats] = useState(service.getCats());
   const onClick = (id) => {
-    console.log(id);
     service.addScore(id);
     setCats(service.getCats());
   };
