@@ -27,7 +27,6 @@ class CatService {
       cat.id === id ? { ...cat, score: cat.score + 1 } : cat
     );
     localStorage.setItem("cat", JSON.stringify(this.data));
-    console.log(this.data, "catservice");
   }
 }
 
