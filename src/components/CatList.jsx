@@ -9,13 +9,11 @@ const HandleCat = ()=>{
 }
 
   return (
-    <div>
-      <div onClick={HandleCat}>
+    <div className="catContainer">
+      <div className="catCard" onClick={HandleCat}>
         <img src={img}/>
         <p>{name}</p>
-      </div>
 
-      <div>
         Score : <span>{score}</span>
       </div>
     </div>

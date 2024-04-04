@@ -1,21 +1,38 @@
-img{
-    width: 60%;
+img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.scoreContainer{
-    display: flex;
-flex-wrap: wrap;
-width: 80%;
-justify-content: center;
-
+.scoreContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
 }
 
-.score{
-    width: 50%;
+.score {
+  width: 50%;
+}
+
+.catContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.catCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
