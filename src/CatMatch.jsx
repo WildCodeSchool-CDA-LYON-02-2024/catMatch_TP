@@ -1,17 +1,17 @@
 import PropTypes from "prop-types";
-
+import "./CatMatch.css";
 const CatMatch = ({ name, image, score, id, clicker }) => {
   const clickHandler = () => {
     clicker(id);
   };
   return (
-    <div className="ca">
-      <div onClick={clickHandler} className="cat">
+    <>
+      <div onClick={clickHandler} className="catmatch">
         <img src={image} />
         <p>{name}</p>
         <p>Score:{score}</p>
       </div>
-    </div>
+    </>
   );
 };
 CatMatch.propTypes = {
