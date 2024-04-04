@@ -1,5 +1,6 @@
 // import CatResult from './components/CatResult.jsx';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar.jsx';
 import CatMap from './components/CatMap.jsx';
 import CatService from './service/CatService.js';
@@ -20,8 +21,22 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <CatMap catArray={catArray} cats={cats} onClick={onClick} />
-      <Score catArray={catArray} catResult={catResult} onClick={onClick} />
+      <Routes>
+        <Route
+          path='/'
+          element={<CatMap catArray={catArray} cats={cats} onClick={onClick} />}
+        />
+        <Route
+          path='/score'
+          element={
+            <Score
+              catArray={catArray}
+              catResult={catResult}
+              onClick={onClick}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 };
