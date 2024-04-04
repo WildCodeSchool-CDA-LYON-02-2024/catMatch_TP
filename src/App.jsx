@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import CatService from './service/CatService';
-import Cat from './components/Cat.jsx';
-import CatResult from './components/CatResult.jsx';
+// import CatResult from './components/CatResult.jsx';
 import './App.css';
+import NavBar from './components/NavBar.jsx';
+import CatMap from './components/CatMap.jsx';
+import CatService from './service/CatService.js';
+import Score from './components/Score.jsx';
 const catArray = new CatService();
+import { useState } from 'react';
 
 const App = () => {
   const [cats, setCats] = useState(catArray.getRandomCats());
@@ -17,27 +19,9 @@ const App = () => {
 
   return (
     <div>
-      <div className='cat-container'>
-        {cats.map((el, index) => (
-          <div key={index}>
-            <Cat
-              data={el}
-              link={el.link}
-              score={el.score}
-              name={el.name}
-              id={el.id}
-              onClick={onClick}
-            />
-          </div>
-        ))}
-      </div>
-      <div className='result-container'>
-        {catResult.map((el, index) => (
-          <div key={index}>
-            <CatResult score={el.score} name={el.name} onClick={onClick} />
-          </div>
-        ))}
-      </div>
+      <NavBar />
+      <CatMap catArray={catArray} cats={cats} onClick={onClick} />
+      <Score catArray={catArray} catResult={catResult} onClick={onClick} />
     </div>
   );
 };
