@@ -10,7 +10,7 @@ function App() {
       const service = new CatService()
     
 
-      const [cats,setCats] = useState(service.data)
+      const [cats,setCats] = useState(service.getCats())
 
       const onclick = (id) => {
         console.log( ("PARENT : ID -->"+id));

@@ -20,6 +20,23 @@ class CatService {
     })
 
     }
+    getRandomCat() {
+        const index = Math.floor(Math.random() * this.data.length);
+        return this.data[index];
+    }
+    
+    getCats() {
+        const cats = [null, null];
+        cats[0] = this.getRandomCat();
+        cats[1] = this.getRandomCat();
+        if(cats[0].id=== cats[1].id){
+            return this.getCats(cats[0])
+        }
+        
+    
+        return cats;
+    }
+    
     
 
 
