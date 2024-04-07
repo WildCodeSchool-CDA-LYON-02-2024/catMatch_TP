@@ -10,10 +10,12 @@ function App() {
       const service = new CatService()
     
 
-      const [cats,setCats] = useState(service.getCats())
+      const [cats,setCats] = useState(service.getRandomCats())
 
       const onclick = (id) => {
-        console.log( ("PARENT : ID -->"+id));
+      
+        service.addScore(id)
+        setCats(service.getRandomCats())
 
       }
 

@@ -25,19 +25,22 @@ class CatService {
         return this.data[index];
     }
     
-    getCats() {
+    getRandomCats() {
         const cats = [null, null];
         cats[0] = this.getRandomCat();
         cats[1] = this.getRandomCat();
         if(cats[0].id=== cats[1].id){
-            return this.getCats(cats[0])
+            return this. getRandomCats(cats[0])
         }
         
     
         return cats;
     }
     
-    
+    addScore(id) {
+       this .data = this.data.map(cat => cat.id === id?{...cat,score:cat.score+1}: cat)
+      
+    }
 
 
 }

@@ -1,8 +1,9 @@
 import './CatComponent.css'
+import propTypes from 'prop-types'
 
 
 
-function CatComponent({name,img,score,id,onClick}) {
+function CatComponent({name,img,score,id,onclick}) {
 
    const clickHandler = () => {
     onclick(id)
@@ -11,7 +12,7 @@ function CatComponent({name,img,score,id,onClick}) {
 
     return (
 
-        <>
+        <div className="card">
         <div  onClick={clickHandler} className = "cat">
             <h1>test</h1>
 
@@ -21,12 +22,21 @@ function CatComponent({name,img,score,id,onClick}) {
           </div>
           
     <div>
-    score: <span>{score}</span>
+        score:{score}
     </div>
         
-    </>
+    </div>
     )
    
+}
+CatComponent.prototype = {
+    name :propTypes .string,
+    img  : propTypes.string,
+    score : propTypes.number,
+    id  : propTypes.number,
+    onClick : propTypes.func
+
+
 }
 
 export default CatComponent
